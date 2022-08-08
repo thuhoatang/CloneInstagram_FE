@@ -1,0 +1,24 @@
+.footer_container {
+    margin: 0 auto;
+    width: 95%;
+    background-color: none;
+    font-size: 12px;
+    display: flex;
+}
+
+.footer_container_list {
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.itemList {
+    margin: 5px 10px;
+    width: auto;
+}
+
+.itemList a{
+    text-decoration: none;
+    color: #9b9899;
+}
