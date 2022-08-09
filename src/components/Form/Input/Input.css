@@ -1,80 +1,89 @@
- 
- .input_login{
-    margin-top: 10px;
+ .input_login {
+     margin-top: 5px;
+     border-radius: 2px;
+     background: transparent;
  }
- .span_hint{
-    top: 10px;
-    left: 15px;
-    /* padding: 15px 17px; */
-    font-size: 12px;
-    color: #b4b4b4;
-    position: absolute;
-    z-index: -0.5;
-    /* font-weight: 200; */
-    -moz-user-select: none !important;
--webkit-touch-callout: none!important;
--webkit-user-select: none!important;
--khtml-user-select: none!important;
--moz-user-select: none!important;
--ms-user-select: none!important;
-user-select: none!important;
-}
 
-.input_login_child {
-    width: 259px;
-    height: 38px;
-    position: relative;
-}
+ .input_login_child {
+     border-radius: 2px;
+     background: transparent;
+ }
 
-.input_login_child label {
-    /* position: relative; */
-}
+ .input_login_label {
+     border-radius: 2px;
+ }
 
-.input_login .input_login_child input{
-    margin: 0px 0px !important;
-    padding:0px 10px !important;
-    width: 258px;
-    height: 38px;
-    font-size: 13px;
-    margin: 5px 5px;
-    z-index: 9999999999;
-    background-color: rgb(250,250,250);
-    border: none;
-    border: 0.5px solid rgba(209, 205, 205, 0.75);
-    border-radius: 2px;
-    outline:none; 
-    /* padding-left: 10px !important; */
-    /* padding-top: 10px !important; */
-}    
+ .span_hint {
+     top: 15px;
+     left: 15px;
+     background: transparent;
+     /* padding: 15px 17px; */
+     font-size: 12px;
+     color: #b4b4b4;
+     position: absolute;
+     z-index: -0.5;
+     /* font-weight: 200; */
+     -moz-user-select: none !important;
+     -webkit-touch-callout: none !important;
+     -webkit-user-select: none !important;
+     -khtml-user-select: none !important;
+     -moz-user-select: none !important;
+     -ms-user-select: none !important;
+     user-select: none !important;
+ }
 
-.addClassNameSpan {
-    /* display: inline-block; */
-    top: -3px;
-}
+ .input_login_child {
+     width: 259px;
+     height: 38px;
+     position: relative;
+ }
 
+ .input_login_child label {
+     /* position: relative; */
+ }
 
-.input_login .input_login_child input:valid {
-    padding-top: 10px;
-}
+ .input_login .input_login_child input {
+     /* margin: 0px 0px ; */
+     padding: 0px 10px ;
+     width: 258px;
+     height: 38px;
+     font-size: 13px;
+     margin: 5px 0px;
+     z-index: 9999999999;
+     background-color: rgb(250, 250, 250);
+     border: none;
+     border: 0.5px solid rgba(209, 205, 205, 0.75);
+     border-radius: 2px;
+     outline: none;
+ }
 
-.btn_password {
-    position: relative;
-    top: -40px;
-    left: 190px;
-    z-index: 99999;
-    font-size:14px;
-    border: none;
-    background: transparent;
-    width: 63px;
-    outline:none; 
-    border: 0.5px solid transparent;
-    cursor: pointer;
-    outline-color: transparent !important;
-}
-.btn_password:active {
-    
-    outline: none !important;
-    border: none !important;
-}
+ .addClassNameSpan {
+     top: 7px;
+     font-size: 10px
+ }
 
 
+ .input_login .input_login_child input:valid {
+     padding-top: 10px;
+ }
+
+ .btn_password {
+     position: relative;
+     top: -45px;
+     left: 190px;
+     z-index: 99999;
+     font-size: 13px;
+     border: none;
+     background: transparent;
+     width: 63px;
+     outline: none;
+     border: 0.5px solid transparent;
+     cursor: pointer;
+     outline-color: transparent !important;
+ }
+
+ .btn_password:active {
+
+     outline: none !important;
+     border: none !important;
+ }
