@@ -1,0 +1,11 @@
+.fromMain {
+    width: 350px;
+    height: 395.33px;
+    background: rgb(168, 80, 80);
+    position: relative;
+}
+
+.fromInput {
+    position: absolute;
+    background: transparent
+}
