@@ -52,6 +52,7 @@ export default class Input extends Component {
           {/*Button Password */}
           {typeNamePropInput === "password" ? (
             <button
+            type="button"
               onClick={() =>this.eventChangeTypeInput(this.state.typeInput == "password" ? "text" : "password")}
               // type="button"
               className="btn_password">{showTitleButton}</button>) : ("")}

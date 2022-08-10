@@ -3,17 +3,32 @@ import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import { Icon } from "@iconify-icon/react";
 import Input from "../Input/Input";
+import axios from "axios";
+import history from "../../../history";
 
 class FormSignIn extends Component {
-  onSubmit = (event) => {
-    event.preventDefault();
+  state = {errLogin: null}
+
+  onSubmit = (values) => {
+    axios.post('http://localhost:8080/api/users/login', {
+      username: values.username,
+      password: values.password
+    })
+    .then(function (response) {
+      console.log(response);
+      history.push('/profile')
+    })
+    .catch( (error) => {
+      this.setState({errLogin: "Tên người dùng bạn đã nhập không thuộc về tài khoản. Vui lòng kiểm tra tên người dùng của bạn và thử lại"})
+    });
   }
   render() {
+    console.log(this.props.locations);
     return (
       <div className="pageSignIn">
         <div className="cardRight">
           <div className="from-sign-in">
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
               <Field
                 name="username"
                 component={Input}
@@ -56,11 +71,16 @@ class FormSignIn extends Component {
               </button>
             </div>
 
+            {this.state.errLogin === null ? '' : (<p className="text-center my-2 mx-5 notification">
+              {this.state.errLogin}
+            </p>)}
+
             {/* Thong bao sai pass */}
+{/*             
             <p className="text-center my-2 mx-5 notification">
               Tên người dùng bạn đã nhập không thuộc về tài khoản. Vui lòng kiểm
               tra tên người dùng của bạn và thử lại.
-            </p>
+            </p> */}
 
             {/* Quen mat khau */}
             <a href="#" className="forgotPasswordTag">

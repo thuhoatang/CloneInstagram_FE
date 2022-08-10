@@ -34,7 +34,7 @@ class Footer extends Component {
       );
     });
     return (
-      <div className="footer_container">
+      <div className="footer_container mb-5">
         <div className="footer_container_list d-flex">{renderedListFooter}</div>
       </div>
     );

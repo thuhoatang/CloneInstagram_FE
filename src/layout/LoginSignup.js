@@ -7,7 +7,6 @@ class LoginSignup extends Component {
     return (
       <div>
         {this.props.children}
-
         <Footer />
       </div>
     );
