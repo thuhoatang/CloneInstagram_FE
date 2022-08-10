@@ -6,33 +6,22 @@ import AppInst4 from '../../../asset/images/AppInst4.png'
 
 import React, { Component } from 'react';
 import Form from '../../Form/Form';
+import SlideImg from './SlideImg';
 
 const arrSrcImg = [AppInst1, AppInst2, AppInst3, AppInst4]
 class Login extends Component {
-    state = {imgCurrent: 0}
-
-    componentDidMount(){
-        setInterval(() => {
-            let tam = this.state.imgCurrent;
-            tam = tam + 1;
-            if(tam == 4) {
-               tam = tam - 4
-            }
-            console.log(tam); 
-            this.setState({imgCurrent: (tam)})
-        }, 2000)
-    
-    }
+   
        
 
     render() {
-        console.log("2");
+        // console.log("2");
         return (
             <div className="pageLogin">
                 <div className="leftImageIntroduct mx-2">
-                    <div className="imgActive">
+                    <SlideImg/>
+                    {/* <div className="imgActive">
                         <img src={arrSrcImg[this.state.imgCurrent]}/>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="rightForm mx-2">
                     <Form/>

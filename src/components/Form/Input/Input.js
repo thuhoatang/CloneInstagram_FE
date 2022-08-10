@@ -13,11 +13,11 @@ export default class Input extends Component {
   };
 
   render() {
-    const { spanNamePropInput, typeNamePropInput } = this.props;
-    console.log(typeNamePropInput);
+    const { spanNamePropInput, typeNamePropInput, input, meta} = this.props; // input là props được nhận từ Field
+    // console.log(m);
 
     const addClassNameSpan =
-      this.state.valueInput != "" ? "addClassNameSpan" : "";
+      input?.value != "" ? "addClassNameSpan" : "";
 
     let term = "";
 
@@ -42,10 +42,12 @@ export default class Input extends Component {
               className="input_text"
               aria-label="Phone number, username, or email"
               type={term}
-              value={this.state.valueInpt}
+              {...input}
               required
             />
           </label>
+
+          {/* <p>{meta.error}</p> */}
 
           {/*Button Password */}
           {typeNamePropInput === "password" ? (

@@ -1,26 +1,44 @@
 import "./FormSignIn.css";
 import React, { Component } from "react";
+import { Field, reduxForm } from "redux-form";
 import { Icon } from "@iconify-icon/react";
 import Input from "../Input/Input";
 
-export default class FormSignIn extends Component {
+class FormSignIn extends Component {
+  onSubmit = (event) => {
+    event.preventDefault();
+  }
   render() {
     return (
       <div className="pageSignIn">
         <div className="cardRight">
-          <div class="from-sign-in">
-            <Input
+          <div className="from-sign-in">
+            <form onSubmit={this.onSubmit}>
+              <Field
+                name="username"
+                component={Input}
+                typeNamePropInput="text"
+                spanNamePropInput="Số điện thoại, tên người dùng hoặc email"
+              />
+              <Field
+                name="password"
+                component={Input}
+                typeNamePropInput="password"
+                spanNamePropInput="Mật khẩu"
+              />
+              {/* <Input
               typeNamePropInput="text"
               spanNamePropInput="Số điện thoại, tên người dùng hoặc email"
-            />
-            <Input
-              typeNamePropInput="password"
-              spanNamePropInput="Mật khẩu cá nhân"
-            />
+            /> */}
 
-            <button type="submit" className="btn_submit_dangnhap">
-              Đăng nhập
-            </button>
+              <button
+                type="submit"
+                className="btn_submit_dangnhap"
+                disabled={this.props.invalid}
+              >
+                Đăng nhập
+              </button>
+            </form>
 
             <div className="horizontal_line">
               <div className="line_left"></div>
@@ -54,3 +72,31 @@ export default class FormSignIn extends Component {
     );
   }
 }
+
+// Trong form có 2 trường [username, password]
+// trogn th valodate không có lỗi, thì err = {}
+// trong th bị lỗi, thì err = {password: "chưa đủ doqkwd"} ==> invalid = true
+// invalid: xuất hiện khi có reduxForm 
+const validate = (values) => {
+  const err = {};
+
+  if (values?.password?.length < 6 || values.password == undefined) {
+    err.password = "Chưa đủ 6 kí tự!";
+  }
+
+  // console.log(dẹqi);
+  return err;
+};
+
+
+
+// tương tự như mapStatetoProp
+FormSignIn = reduxForm({
+  // ten cua moi form la duy nhat
+  form: "formSignIn",
+  validate: validate // tên trường của reduxform
+})(FormSignIn);
+
+
+
+export default FormSignIn;
