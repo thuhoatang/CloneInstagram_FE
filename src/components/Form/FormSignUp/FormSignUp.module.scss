@@ -1,6 +1,12 @@
 .form-sign-up {
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 .titleIntro {
@@ -18,7 +24,7 @@
     /* background: #ffffff; */
     text-align: center;
     border-radius: 4px;
-    border: rgb(0, 149, 246) !important;
+    // border: rgb(0, 149, 246) !important;
     outline: rgb(0, 149, 246);
     border: 0.5px solid transparent;
     outline-color: rgb(0, 149, 246) !important;
@@ -93,6 +99,29 @@
     font-weight: 600;
 }
 
-.jjj {
-    background-color: #3a5286
+.btnSignUp {
+    background: rgb(0,149,246);
+    width: 258px;
+    height: 30px;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    border: rgb(0, 149, 246);
+    outline: rgb(0, 149, 246);
+    // border: 0.5px solid transparent;
+    outline-color: rgb(0, 149, 246);
+    font-weight: 600;
+    font-size: 14px;
+    margin: 5px auto;
+    cursor: pointer;
+}
+
+.btnSignUp:focus {
+    opacity: 0.7;
+    outline: rgb(0, 149, 246);
+    border: rgb(0, 149, 246);
+}
+
+.btnSignUp:disabled{
+    background-color: rgb(148, 212, 254);
 }

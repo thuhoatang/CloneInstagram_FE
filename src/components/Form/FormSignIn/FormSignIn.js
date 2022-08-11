@@ -15,13 +15,14 @@ class FormSignIn extends Component {
       password: values.password
     })
     .then(function (response) {
-      console.log(response);
-      history.push('/profile')
+      // console.log(response);
+      // history.push('/profile')
     })
     .catch( (error) => {
       this.setState({errLogin: "Tên người dùng bạn đã nhập không thuộc về tài khoản. Vui lòng kiểm tra tên người dùng của bạn và thử lại"})
     });
   }
+
   render() {
     
     return (
@@ -66,7 +67,7 @@ class FormSignIn extends Component {
             {/* Đăng nhập bằng facebook */}
             <div className="loginByFacebook">
               <button>
-                <iconify-icon icon="ant-design:facebook-filled" ></iconify-icon>
+                <iconify-icon icon="ant-design:facebook-filled"></iconify-icon>
                 <span>Đăng nhập bằng Facebook</span>
               </button>
             </div>
