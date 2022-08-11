@@ -85,7 +85,7 @@
 .loginByFacebook button {
     width: 258px;
     height: 30px;
-    background: transparent;
+    background: #ffffff;
     text-align: center;
     border-radius: 4px;
     border: rgb(0, 149, 246) !important;
@@ -102,7 +102,8 @@
 
 .loginByFacebook button span {
     margin: 0px 5px;
-
+    color: rgb(58, 82, 134);
+    background: transparent;
 }
 
 .loginByFacebook button iconify-icon {

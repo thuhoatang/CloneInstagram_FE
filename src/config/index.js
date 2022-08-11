@@ -2,7 +2,7 @@ const routeDefault = {
   home: "/home",
   profile: "/profile",
   signIn: "/login",
-  signUp: "/sign-up",
+  signUp: "/signup",
 };
 
 export default routeDefault;

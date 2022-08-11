@@ -23,7 +23,7 @@ class FormSignIn extends Component {
     });
   }
   render() {
-    console.log(this.props.locations);
+    
     return (
       <div className="pageSignIn">
         <div className="cardRight">
@@ -66,7 +66,7 @@ class FormSignIn extends Component {
             {/* Đăng nhập bằng facebook */}
             <div className="loginByFacebook">
               <button>
-                <iconify-icon icon="ant-design:facebook-filled"></iconify-icon>
+                <iconify-icon icon="ant-design:facebook-filled" ></iconify-icon>
                 <span>Đăng nhập bằng Facebook</span>
               </button>
             </div>

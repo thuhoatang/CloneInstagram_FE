@@ -87,3 +87,15 @@
      outline: none !important;
      border: none !important;
  }
+
+ .hihi {
+    width: 20px;
+ }
+
+ .icon_tick {
+    font-size: 25px;
+    color: black;
+    position: absolute;
+    left: 220px;
+    top: 10px;
+}

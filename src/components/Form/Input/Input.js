@@ -13,8 +13,10 @@ export default class Input extends Component {
   };
 
   render() {
-    const { spanNamePropInput, typeNamePropInput, input, meta} = this.props; // input là props được nhận từ Field
-    // console.log(m);
+    const { spanNamePropInput, typeNamePropInput, input, meta, checkInput } = this.props; // input là props được nhận từ Field
+
+
+    let renderCheckInput = checkInput ? (<iconify-icon className="icon_tick" icon="charm:tick-double" style={{fontSize: "25px", color: "#28a745",  position: "absolute", left: "220px", top: "10px"}}></iconify-icon>) : null;
 
     const addClassNameSpan =
       input?.value != "" ? "addClassNameSpan" : "";
@@ -31,7 +33,7 @@ export default class Input extends Component {
       this.state.typeInput === "password" ? "Hiển thị" : "Ẩn";
 
     return (
-      <div className="input_login">
+      <div className="input_login ">
         <div className="input_login_child">
           <label className="input_login_label">
             <span className={`span_hint ${addClassNameSpan}`}>
@@ -45,6 +47,11 @@ export default class Input extends Component {
               {...input}
               required
             />
+
+            {renderCheckInput}
+
+            {/* <iconify-icon className="icon_tick" icon="charm:tick-double" 
+            style={{fontSize: "25px", color: "#28a745",  position: "absolute", left: "220px", top: "10px"}}></iconify-icon> */}
           </label>
 
           {/* <p>{meta.error}</p> */}
@@ -55,8 +62,9 @@ export default class Input extends Component {
             type="button"
               onClick={() =>this.eventChangeTypeInput(this.state.typeInput == "password" ? "text" : "password")}
               // type="button"
-              className="btn_password">{showTitleButton}</button>) : ("")}
+              className="btn_password">{showTitleButton}</button>) : ("")} 
         </div>
+
       </div>
     );
   }

@@ -5,6 +5,7 @@ import downloadGGPhay from '../../asset/images/downloadGGPhay.png'
 
 import React, { Component } from "react";
 import FormSignIn from './FormSignIn/FormSignIn';
+import { Link } from 'react-router-dom';
 
 
 
@@ -13,6 +14,8 @@ class Form extends Component {
     //   const renderListInput = listInputLogin.map((item, index) => { 
     //     return <Input key={index} typeNamePropInput={item.type} spanNamePropInput={item.placeholder}/>
     //   })
+
+    const {questionAccoutPropsForm, tagRedirectPropsForm, linkPropForm} = this.props;
     return (
       <div className="formMain">
         {/* 1 */}
@@ -20,13 +23,14 @@ class Form extends Component {
           <div className="divImgLogo">
             <img src={logoInstagram}/>
           </div>
-          <FormSignIn />
+          {this.props.children}
+          {/* <FormSignIn /> */}
         </div>
 
 {/* 2 */}
         <div className="formAskAccount">
-          <div>Bạn chưa có tài khoản ư?</div>
-          <div> <a href="#">Đăng kí</a></div>
+          <div>{questionAccoutPropsForm}</div>
+          <div> <Link to={linkPropForm}>{tagRedirectPropsForm}</Link></div>
         </div>
 
         {/* 3 */}
